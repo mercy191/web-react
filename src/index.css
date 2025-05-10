@@ -1,13 +1,733 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #d3b8aa;
+    font-family: "Comfortaa", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ========== HEADER ========== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: #f6e87d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    font-family: "Yeseva One", serif;
+    font-size: 24px;
+    margin: 0;
+}
+
+.slogan-block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.line {
+    width: 1px;
+    height: 100px;
+    background-color: black;
+}
+
+.slogan-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.contacts {
+    text-align: right;
+    font-size: 14px;
+}
+
+.burger {
+    width: 25px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.burger span {
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+}
+
+/* ========== MAIN SECTION ========== */
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 40px;
+}
+
+/* ========== ABOUT ========== */
+.about-card {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #fef9c7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-left img {
+    width: 150px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.about-right h3 {
+    font-family: "Yeseva One", serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+.about-buttons-row {
+    display: flex;
+    gap: 20px;
+}
+
+.about-buttons-row button,
+.ask-btn,
+.btn-link {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    font-family: "Comfortaa", sans-serif;
+    border: none;
+    background-color: #d5dadc;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
+
+/* ========== news ========== */
+.news {
+    display: flex;
+}
+
+.news-card {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.news-card h2 {
+    font-family: "Yeseva One", serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 200px; /* ограничиваем по высоте */
+    overflow-y: auto; /* включаем вертикальную прокрутку */
+    padding-right: 10px; /* чтобы не слипалось со скроллом */
+}
+
+.news-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.news-date {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+}
+
+.news-time {
+    font-size: 13px;
+    color: #999;
+}
+
+.news-list a {
+    font-size: 14px;
+    color: #2a2a2a;
+    text-decoration: none;
+}
+
+.news-list a:hover {
+    text-decoration: underline;
+}
+
+/* ========== FOOTER SECTION ========== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d9d9d9;
+    padding: 20px 20px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 20px;
+    font-family: "Yeseva One", serif;
+}
+
+.footer-links,
+.footer-social,
+.footer-contact,
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.footer-links a,
+.footer-form a,
+.footer-links .openReviews,
+.footer-form .openPromo,
+.footer-form .openRequest,
+.footer-links .ourServicesPage {
+    text-decoration: none;
+    margin: 5px;
+    color: #000000;
+}
+
+.footer-links a:hover,
+.footer-links .openReviews:hover,
+.footer-form a:hover,
+.footer-form .openPromo:hover,
+.openRequest:hover,
+.footer-form .ourServicesPage:hover {
+    color: #d8d4a5;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    color: #000000;
+    font-size: 14px;
+}
+
+.footer-social img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1); /* анимация при наведении */
+}
+
+/* Стиль для мобильных устройств */
+@media (max-width: 850px) {
+    /* ========== MAIN SECTION ========== */
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    footer {
+        flex-direction: column; /* Переводим футер в столбик */
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-contact,
+    .footer-form {
+        margin-bottom: 10px; /* Добавляем отступы между блоками */
+    }
+}
+
+/* ========== БУРГЕР-МЕНЮ ========== */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Скрываем меню справа за пределами экрана */
+    width: 300px; /* Ширина меню */
+    height: 100%;
+    background-color: #f5f5f5;
+    transition: right 0.3s ease; /* Плавное появление меню */
+    padding-top: 50px; /* Отступ сверху */
+}
+
+.menu.open {
+    right: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-links .openPromo,
+.openReviews,
+.ourServicesPage {
+    cursor: pointer;
+}
+
+.menu a {
+    color: #000;
+    text-decoration: none; /* убирает подчёркивание */
+}
+
+.menu .openRequest {
+    margin-top: 30px;
+    background-color: #fdf0b0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-family: "Comfortaa", sans-serif;
+    border: none;
+}
+
+.contact {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ========== ФОРМА ВОПРОСА И ЗАЯВКИ ========== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+.form-container {
+    width: 90%;
+    max-width: 450px;
+    max-height: 90vh;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+/* Прокрутка */
+.form-container::-webkit-scrollbar {
+    width: 6px;
+}
+.form-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* Анимация появления */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Закрывающий крестик */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Заголовок и текст */
+.form-container h2 {
+    text-align: center;
+    margin: 0;
+    font-family: "Yeseva One", serif;
+    font-size: 24px;
+}
+.form-container p {
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Форма */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Поля ввода */
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: "Comfortaa", sans-serif;
+    transition: 0.2s ease;
+    box-sizing: border-box;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #f4c542;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(244, 197, 66, 0.3);
+}
+
+/* Кнопка и соглашение */
+.submit-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+
+.submit-btn {
+    background-color: #fdf0b0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Comfortaa", sans-serif;
+}
+
+.agreement {
+    font-size: 10px;
+    text-align: center;
+    color: #777;
+}
+
+.agreement a {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* ========== ФОРМА АКЦИЙ ========== */
+.promo-container {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+/* Заголовок и описание */
+.promo-container h2 {
+    font-family: "Yeseva One", serif;
+    text-align: center;
+    margin: 0;
+}
+.promo-container p {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+/* Крестик */
+.promo-container .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Список и отдельные акции */
+.promo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.promo-item {
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+/* ========== СЛАЙДЕР ОТЗЫВЫ ========== */
+.reviews-modal {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    font-family: "Yeseva One", serif;
+}
+
+.reviews-modal .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Обёртка слайдера */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    font-family: "Comfortaa", sans-serif;
+    width: 100%;
+    max-width: 600px; /* например */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.slider-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slide {
+    min-width: 100%;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стрелки навигации */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+
+/* Индикаторы */
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.dot.active {
+    background: #333;
+}
+
+/* SERVICES.HTML */
+/* Стиль секции услуг */
+.services {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: "Yeseva One", serif;
+}
+
+.services h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-box {
+    background-color: #fef9c7;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Модальное окно для услуг */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+.service-modal-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    font-family: "Comfortaa", sans-serif;
+}
+
+.service-modal-container h3 {
+    font-family: "Yeseva One", serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service-modal-container p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Кнопка закрытия модального окна */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Пример адаптивности для секции услуг */
+@media (max-width: 600px) {
+    .services h2 {
+        font-size: 20px;
+    }
+    .service-box {
+        font-size: 14px;
+    }
+    .service-modal-container h3 {
+        font-size: 20px;
+    }
+    .service-modal-container p {
+        font-size: 14px;
+    }
 }
