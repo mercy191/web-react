@@ -1,15 +1,17 @@
     import React, {useState} from 'react';
     import axios from 'axios';
     import {Link} from "react-router-dom";
+    import useServices from "../hooks/useServices";
 
     const QuestionModal = ({ closeModal }) => {
         const [formData, setFormData] = useState({
             name: '',
             phone: '',
             email: '',
-            service: '',
+            serviceId: '',
             question: ''
         });
+        const services = useServices();
 
         const handleChange = (e) => {
             setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -43,22 +45,25 @@
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label>Имя</label>
-                            <input type="text" placeholder="Введите имя" name="name" value={formData.name} onChange={handleChange} required />
+                            <input name="name" type="text" placeholder="Введите имя" value={formData.name} onChange={handleChange} required />
                         </div>
                         <div>
                             <label>Телефон</label>
-                            <input type="tel" placeholder="Введите телефон" name="phone" value={formData.phone} onChange={handleChange} required />
+                            <input name="phone" type="tel" placeholder="Введите телефон" value={formData.phone} onChange={handleChange} required />
                         </div>
                         <div>
                             <label>Email</label>
-                            <input type="email" placeholder="Введите адрес электронной почты" name="email" value={formData.email} onChange={handleChange} />
+                            <input name="email" type="email" placeholder="Введите адрес электронной почты" value={formData.email} onChange={handleChange} />
                         </div>
                         <div>
                             <label>Услуга</label>
-                            <select name="service" value={formData.service} onChange={handleChange} required>
-                                <option value="">Выберите категорию вопроса</option>
-                                <option value="1">Услуга 1</option>
-                                <option value="2">Услуга 2</option>
+                            <select name="serviceId" value={formData.serviceId} onChange={handleChange} required>
+                                <option value="">Выберите интересующую услугу</option>
+                                {services.map(service => (
+                                    <option key={service.id} value={service.id}>
+                                        {service.name}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                         <div>

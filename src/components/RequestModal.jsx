@@ -1,7 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 import {Link} from "react-router-dom";
+import useServices from "../hooks/useServices";
+import usePromo from "../hooks/usePromo";
 
 const RequestModal = ({ closeModal }) => {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        serviceId: '',
+        promotionId: '',
+    });
+    const services = useServices();
+    const promotions = usePromo();
+
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value});
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post('http://localhost:5000/api/requests', formData);
+            alert('Заявка успешно отправлена!');
+            closeModal();
+        }
+        catch (err) {
+            console.error('Ошибка при отправке заявки:', err);
+            alert('Ошибка при отправке.');
+        }
+    };
+
     return (
         <div className="overlay active" onClick={e => e.target === e.currentTarget && closeModal()}>
             <div className="form-container">
@@ -10,39 +40,39 @@ const RequestModal = ({ closeModal }) => {
                 <h2>Заполните заявку</h2>
                 <p>Будем рады работать с Вами!</p>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label>Имя</label>
-                        <input type="text" placeholder="Введите имя" required/>
+                        <input name="name" type="text" placeholder="Введите имя" value={formData.name} onChange={handleChange} required />
                     </div>
                     <div>
                         <label>Телефон</label>
-                        <input type="tel" placeholder="Введите телефон" required/>
+                        <input name="phone" type="tel" placeholder="Введите телефон" value={formData.phone} onChange={handleChange} required />
                     </div>
                     <div>
                         <label>Email</label>
-                        <input type="email" placeholder="Введите адрес электронной почты"/>
+                        <input name="email" type="email" placeholder="Введите адрес электронной почты" value={formData.email} onChange={handleChange} />
                     </div>
                     <div>
                         <label>Услуга</label>
-                        <select required>
+                        <select name="serviceId" value={formData.serviceId} onChange={handleChange} required>
                             <option value="">Выберите интересующую услугу</option>
-                            <option value="buh">
-                                Комплексный бухгалтерский и налоговый учёт
-                            </option>
-                            <option value="otchet">
-                                Налоговая и статистическая отчётность
-                            </option>
-                            <option value="esf">ЭСФ, СНТ, Импорт</option>
-                            <option value="consult">Консультации</option>
+                            {services.map(service => (
+                                <option key={service.id} value={service.id}>
+                                    {service.name}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <div>
                         <label>Акция</label>
-                        <select>
+                        <select name="promotionId" value={formData.promotionId} onChange={handleChange}>
                             <option value="">Выберите акцию</option>
-                            <option value="discount">Скидка за друга</option>
-                            <option value="first-month">....</option>
+                            {promotions.map((promo) => (
+                                <option key={promo.id} value={promo.id}>
+                                    {promo.title}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <div className="submit-section">

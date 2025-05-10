@@ -1,7 +1,16 @@
+html {
+    height: 100%;
+}
 body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: #d3b8aa;
     font-family: "Comfortaa", sans-serif;
 }
+
 
 /* ========== HEADER ========== */
 header {
@@ -26,13 +35,20 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.2);
 }
 
 .title h1 {
     font-family: "Yeseva One", serif;
     font-size: 24px;
     margin: 0;
+    cursor: pointer;
 }
+
 
 .slogan-block {
     display: flex;
@@ -75,10 +91,17 @@ header {
 /* ========== MAIN SECTION ========== */
 main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 0 40px;
+    flex: 1;
+}
+
+.about {
+    display: flex;
+    max-width: 75%;
+    min-width: 75%;
 }
 
 /* ========== ABOUT ========== */
@@ -90,6 +113,8 @@ main {
     border-radius: 20px;
     background-color: #fef9c7;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 100%;
 }
 
 .about-left img {
@@ -102,9 +127,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     text-align: center;
     font-size: 12px;
+    margin: 0 auto;
 }
 
 .about-right h3 {
@@ -121,9 +148,12 @@ main {
 .about-buttons-row button,
 .ask-btn,
 .btn-link {
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     width: 100px;
     height: 40px;
-    font-size: 14px;
+    font-size: 16px;
     font-family: "Comfortaa", sans-serif;
     border: none;
     background-color: #d5dadc;
@@ -136,9 +166,14 @@ main {
     color: black;
 }
 
+.ask-btn:hover {
+    transform: translateY(-5px);
+}
+
 /* ========== news ========== */
 .news {
     display: flex;
+    max-width: 20%;
 }
 
 .news-card {
@@ -146,7 +181,6 @@ main {
     padding: 30px 40px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -227,7 +261,8 @@ footer {
 .footer-links .openReviews,
 .footer-form .openPromo,
 .footer-form .openRequest,
-.footer-links .ourServicesPage {
+.footer-links .openServices,
+.footer-links .openHome {
     text-decoration: none;
     margin: 5px;
     color: #000000;
@@ -235,10 +270,11 @@ footer {
 
 .footer-links a:hover,
 .footer-links .openReviews:hover,
+.footer-links .openHome:hover,
+.footer-links .openServices:hover,
 .footer-form a:hover,
 .footer-form .openPromo:hover,
-.openRequest:hover,
-.footer-form .ourServicesPage:hover {
+.footer-form .openRequest:hover {
     color: #d8d4a5;
 }
 
@@ -320,8 +356,14 @@ footer {
 
 .menu-links .openPromo,
 .openReviews,
-.ourServicesPage {
+.openServices {
     cursor: pointer;
+}
+
+.menu-links .openPromo:hover,
+.openReviews:hover,
+.openServices:hover {
+    color: #d8d4a5;
 }
 
 .menu a {
@@ -634,11 +676,11 @@ form textarea:focus {
 /* SERVICES.HTML */
 /* Стиль секции услуг */
 .services {
-    max-width: 900px;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 20px;
     text-align: center;
     font-family: "Yeseva One", serif;
+    display: flex;
 }
 
 .services h2 {
@@ -650,10 +692,11 @@ form textarea:focus {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    margin: 0 auto;
 }
 
 .service-box {
-    background-color: #fef9c7;
+    background-color: #d5dadc;
     padding: 20px;
     border-radius: 20px;
     font-family: "Comfortaa", sans-serif;

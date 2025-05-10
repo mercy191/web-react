@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import ServicesPage from "./pages/ServicesPage";
 import QuestionModal from "./components/QuestionModal";
 import PromoModal from "./components/PromoModal";
 import RequestModal from "./components/RequestModal";
@@ -20,17 +19,6 @@ function App() {
                     path="/"
                     element={
                         <Home
-                            setMenuOpen={setMenuOpen}
-                            isMenuOpen={isMenuOpen}
-                            openModal={openModal}
-                            closeModal={closeModal}
-                        />
-                    }
-                />
-                <Route
-                    path="/services"
-                    element={
-                        <ServicesPage
                             setMenuOpen={setMenuOpen}
                             isMenuOpen={isMenuOpen}
                             openModal={openModal}

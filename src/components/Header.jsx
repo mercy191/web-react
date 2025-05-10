@@ -1,11 +1,11 @@
 import React from "react";
 
-const Header = ({ setMenuOpen }) => {
+const Header = ({ setMenuOpen, switchToHome }) => {
     return (
         <header>
             <div className="header-left">
-                <div className="logo">logo</div>
-                <div className="title">
+                <div className="logo" onClick={switchToHome}>logo</div>
+                <div className="title" onClick={switchToHome}>
                     <h1>INCOME & COST</h1>
                 </div>
                 <div className="slogan-block">

@@ -1,15 +1,14 @@
 import React from "react";
-import {Link} from "react-router-dom";
 
-const BurgerMenu = ({ isMenuOpen, setMenuOpen, openModal}) => {
+const Burger = ({ isMenuOpen, setMenuOpen, openModal, switchToServices}) => {
     if (!isMenuOpen) return null;
 
     return (
         <div className="menu open" onClick={(e) => e.target === e.currentTarget && setMenuOpen(false)}>
             <div className="close-menu" onClick={() => setMenuOpen(false)}>✕</div>
             <div className="menu-links">
+                <div className="openServices" onClick={switchToServices}>Наши услуги</div>
                 <div className="openPromo" onClick={() => openModal("promo")}>Акции</div>
-                <Link to="/services">Наши услуги</Link>
                 <div className="openReviews" onClick={() => openModal("reviews")}>Отзывы</div>
                 <div className="openRequest" onClick={() => openModal("request")}>Оставить заявку</div>
             </div>
@@ -22,4 +21,4 @@ const BurgerMenu = ({ isMenuOpen, setMenuOpen, openModal}) => {
     );
 };
 
-export default BurgerMenu;
+export default Burger;

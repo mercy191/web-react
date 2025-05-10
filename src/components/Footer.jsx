@@ -1,12 +1,11 @@
 import React from "react";
-import {Link} from "react-router-dom";
 
-const Footer = ({ openModal }) => {
+const Footer = ({ openModal, switchToServices, switchToHome }) => {
     return (
         <footer>
             <div className="footer-links">
-                <Link to="/">О нас</Link>
-                <Link to="/services">Наши услуги</Link>
+                <div className="openHome" onClick={switchToHome}>О нас</div>
+                <div className="openServices" onClick={switchToServices}>Наши услуги</div>
                 <div className="openReviews" onClick={() => openModal("reviews")}>Отзывы</div>
             </div>
             <div className="footer-social">
