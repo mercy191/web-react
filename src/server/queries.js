@@ -18,10 +18,10 @@ db.connect(err => {
 });
 
 const handleQuestionPost = (req, res) => {
-    const { name, phone, email, service, question } = req.body;
+    const { name, phone, email, serviceId, question } = req.body;
     const sql = 'INSERT INTO questions (name, phone, email, serviceId, question) VALUES (?, ?, ?, ?, ?)';
 
-    db.query(sql, [name, phone, email, service, question], (err, result) => {
+    db.query(sql, [name, phone, email, serviceId, question], (err, result) => {
         if (err) {
             console.error('Ошибка при сохранении:', err);
             res.status(500).send('Ошибка сервера');
@@ -33,10 +33,10 @@ const handleQuestionPost = (req, res) => {
 };
 
 const handleRequestPost = (req, res) => {
-    const { name, phone, email, service, promotion } = req.body;
+    const { name, phone, email, serviceId, promotion } = req.body;
 
     const sql = 'INSERT INTO requests (name, phone, email, serviceId, promotionId) VALUES (?, ?, ?, ?, ?)';
-    db.query(sql, [name, phone, email, service, promotion], (err, result) => {
+    db.query(sql, [name, phone, email, serviceId, promotion], (err, result) => {
         if (err) {
             console.error('Ошибка при сохранении заявки:', err);
             return res.status(500).send('Ошибка сервера');

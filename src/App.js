@@ -5,7 +5,7 @@ import QuestionModal from "./components/QuestionModal";
 import PromoModal from "./components/PromoModal";
 import RequestModal from "./components/RequestModal";
 import ReviewsModal from "./components/ReviewsModal";
-import useModals from "./hooks/useModals"; // новый хук
+import useModals from "./hooks/useModals";
 import "./index.css";
 
 function App() {
