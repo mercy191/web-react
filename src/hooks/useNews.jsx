@@ -7,7 +7,7 @@ const useNews = () => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                const res = await axios.get('http://89.104.71.205:5000/api/news');
+                const res = await axios.get('https://incomecost.ru/api/news');
                 setNewsList(res.data);
             }
             catch (error) {

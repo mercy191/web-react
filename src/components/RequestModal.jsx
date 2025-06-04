@@ -22,7 +22,7 @@ const RequestModal = ({ closeModal }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://89.104.71.205:5000/api/requests', formData);
+            await axios.post('https://incomecost.ru/api/requests', formData);
             alert('Заявка успешно отправлена!');
             closeModal();
         }

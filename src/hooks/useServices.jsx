@@ -7,7 +7,7 @@ const useServices = () => {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const res = await axios.get('http://89.104.71.205:5000/api/services');
+                const res = await axios.get('https://incomecost.ru/api/services');
                 setServices(res.data);
             }
             catch (error) {

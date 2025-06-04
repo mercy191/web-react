@@ -9,7 +9,7 @@ const useReviews = () => {
     useEffect(() => {
         const fetchReviews = async () => {
             try {
-                const response = await axios.get('http://89.104.71.205:5000/api/reviews');
+                const response = await axios.get('https://incomecost.ru/api/reviews');
                 setReviews(response.data);
             }
             catch (error) {
