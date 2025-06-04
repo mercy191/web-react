@@ -7,7 +7,7 @@ const usePromo = () => {
     useEffect(() => {
         const fetchPromotions = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/promotions');
+                const res = await axios.get('http://89.104.71.205:5000/api/promotions');
                 setPromotions(res.data);
             }
             catch (error) {

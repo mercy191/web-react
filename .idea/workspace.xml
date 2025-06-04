@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="39157426-95f8-423c-a40b-a663c402cf95" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/queries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/QuestionModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuestionModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RequestModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RequestModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useNews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useNews.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/usePromo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/usePromo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useReviews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useReviews.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useServices.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useServices.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mercy191&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mercy191/web-react.git&quot;,
+    &quot;accountId&quot;: &quot;4af88e43-ba44-4a73-839b-f063f58a6b5c&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -57,9 +72,9 @@
       <recent name="D:\Documents\Institute\6 Term\Web\web-react\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Institute\6 Term\Web\web-react" />
       <recent name="D:\Documents\Institute\6 Term\Web\web-react\src\server" />
       <recent name="D:\Documents\Institute\6 Term\Web\web-react\src" />
-      <recent name="D:\Documents\Institute\6 Term\Web\web-react" />
       <recent name="D:\Documents\Institute\6 Term\Web\web-react\client" />
       <recent name="D:\Documents\Institute\6 Term\Web\web-react\client\src" />
     </key>
@@ -86,11 +101,26 @@
       <workItem from="1746708079077" duration="6933000" />
       <workItem from="1746872388997" duration="27760000" />
       <workItem from="1747068604628" duration="854000" />
-      <workItem from="1747321944041" duration="5764000" />
+      <workItem from="1747321944041" duration="5885000" />
+      <workItem from="1747340624052" duration="1083000" />
+      <workItem from="1748959645401" duration="276000" />
+      <workItem from="1748962871597" duration="4489000" />
+      <workItem from="1749021536236" duration="19965000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

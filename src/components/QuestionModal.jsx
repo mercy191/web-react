@@ -20,7 +20,7 @@
         const handleSubmit = async (e) => {
             e.preventDefault();
             try {
-                await axios.post('http://localhost:5000/api/questions', formData);
+                await axios.post('http://89.104.71.205:5000/api/questions', formData);
                 alert('Форма отправлена!');
                 closeModal();
             }
