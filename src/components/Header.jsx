@@ -4,7 +4,9 @@ const Header = ({ setMenuOpen, switchToHome }) => {
     return (
         <header>
             <div className="header-left">
-                <div className="logo" onClick={switchToHome}>logo</div>
+                <div className="logo" onClick={switchToHome}>
+                    <img src="/img/logo.jpg" alt="Офис компании"/>
+                </div>
                 <div className="title" onClick={switchToHome}>
                     <h1>INCOME & COST</h1>
                 </div>

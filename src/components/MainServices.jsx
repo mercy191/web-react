@@ -21,7 +21,7 @@ const MainServices = ({ openModal, closeModal, modals, switchToHome }) => {
                         <img src="/img/office.jpg" alt="Офис компании"/>
                     </div>
                     <div className="about-right">
-                        <h2>Наши услуги. Как мы можем вам помочь?</h2>
+                        <h3>Наши услуги. Как мы можем вам помочь?</h3>
                         <div className="services">
                             <div className="services-grid">
                                 {services.map(service => (

@@ -40,47 +40,49 @@ const RequestModal = ({ closeModal }) => {
                 <h2>Заполните заявку</h2>
                 <p>Будем рады работать с Вами!</p>
 
-                <div>
-                    <label>Имя</label>
-                    <input name="name" type="text" placeholder="Введите имя" value={formData.name} onChange={handleChange} required />
-                </div>
-                <div>
-                    <label>Телефон</label>
-                    <input name="phone" type="tel" placeholder="Введите телефон" value={formData.phone} onChange={handleChange} required />
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input name="email" type="email" placeholder="Введите адрес электронной почты" value={formData.email} onChange={handleChange} />
-                </div>
-                <div>
-                    <label>Услуга</label>
-                    <select name="serviceId" value={formData.serviceId} onChange={handleChange} required>
-                        <option value="">Выберите интересующую услугу</option>
-                        {services.map(service => (
-                            <option key={service.id} value={service.id}>
-                                {service.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div>
-                    <label>Акция</label>
-                    <select name="promotionId" value={formData.promotionId} onChange={handleChange}>
-                        <option value="">Выберите акцию</option>
-                        {promotions.map((promo) => (
-                            <option key={promo.id} value={promo.id}>
-                                {promo.title}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div className="submit-section">
-                    <button type="submit" className="submit-btn" onSubmit={handleSubmit}>Оставить заявку</button>
-                    <p className="agreement">
-                        Отправляя форму, вы соглашаетесь<br/>
-                        с <Link to="#">Политикой конфиденциальности</Link>
-                    </p>
-                </div>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>Имя</label>
+                        <input name="name" type="text" placeholder="Введите имя" value={formData.name} onChange={handleChange} required />
+                    </div>
+                    <div>
+                        <label>Телефон</label>
+                        <input name="phone" type="tel" placeholder="Введите телефон" value={formData.phone} onChange={handleChange} required />
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input name="email" type="email" placeholder="Введите адрес электронной почты" value={formData.email} onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label>Услуга</label>
+                        <select name="serviceId" value={formData.serviceId} onChange={handleChange} required>
+                            <option value="">Выберите интересующую услугу</option>
+                            {services.map(service => (
+                                <option key={service.id} value={service.id}>
+                                    {service.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div>
+                        <label>Акция</label>
+                        <select name="promotionId" value={formData.promotionId} onChange={handleChange}>
+                            <option value="">Выберите акцию</option>
+                            {promotions.map((promo) => (
+                                <option key={promo.id} value={promo.id}>
+                                    {promo.title}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className="submit-section">
+                        <button type="submit" className="submit-btn" onSubmit={handleSubmit}>Оставить заявку</button>
+                        <p className="agreement">
+                            Отправляя форму, вы соглашаетесь<br/>
+                            с <Link to="#">Политикой конфиденциальности</Link>
+                        </p>
+                    </div>
+                </form>
             </div>
         </div>
     );
